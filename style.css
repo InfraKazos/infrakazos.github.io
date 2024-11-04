@@ -129,7 +129,7 @@ body{
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: #f5e849; /* The skewed background color */
+    background: linear-gradient(170deg, #f5e849,#f59649); /* The skewed background color */
     transform: skew(-10deg); /* Adjust skew angle as desired */
     border-radius: inherit; /* Match button's border-radius */
     z-index: -1; /* Place behind the button text */
@@ -137,9 +137,9 @@ body{
 }
 
 #pull:active{
-    transform: translateY(-100px) scale(0.95);
+    transform: translateY(-100px) scale(0.9);
 }
 
 #pull:active::before{
-    transform: scale(0.95) skew(-10deg);
+    transform: skew(-10deg);
 }
