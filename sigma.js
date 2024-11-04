@@ -2,6 +2,8 @@ setTimeout(()=>{document.getElementById('pull').addEventListener('click', pull);
 let container = document.getElementById('container');
 let pullcontainer = document.getElementById('pullcontainer');
 let debounce = false;
+let pyroxdisp = document.getElementById('pyroxdisp');
+let pyroxspent = 0;
 
 let students;
 fetch("data.json").then(response => response.json()).then(data => {
@@ -34,6 +36,8 @@ function pull() {
     if (debounce){
         return;
     }
+    pyroxspent += 1200;
+    pyroxdisp.innerText = pyroxspent;
     debounce = true;
     let imgcontainer;
     let button;
