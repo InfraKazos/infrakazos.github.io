@@ -10,7 +10,7 @@ fetch("data.json").then(response => response.json()).then(data => {
 });
 
 function select(){
-    number = Math.random() * 100;
+    number = 0// Math.random() * 100;
     if(number < 3){
         return students["3star"][Math.floor(Math.random() * students["3star"].length)];
     }else if(number < 21.5){
@@ -21,7 +21,7 @@ function select(){
 }
 
 function selectguarantee2(){
-    number = Math.random() * 100;
+    number = 0// Math.random() * 100;
     if(number < 3){
         return students["3star"][Math.floor(Math.random() * students["3star"].length)];
     }else{
@@ -50,7 +50,7 @@ function pull() {
     try{
         let images = imgcontainer.children;
         for(let i = 0; i < images.length; i++){
-            images[i].classList.add('fadeoutimg');
+            images[i].children[0].classList.add('fadeoutimg');
         }
     }catch(e){}
     
@@ -64,9 +64,15 @@ function pull() {
         }
         console.log(student);
         const studentname = Object.keys(student)[0];
+        const anc = document.createElement('a');
         img.src = student[studentname];
         img.classList.add('animated-image');
-        newimgcontainer.appendChild(img);
+        img.style.animationDelay = `${(0.5 * i)}s`;
+        anc.href = "https://bluearchive.wiki/wiki/" + studentname.replace(" ", "_");
+        anc.classList.add('delay');
+        anc.appendChild(img);
+        
+        newimgcontainer.appendChild(anc);
     }
     const newbutton = document.createElement("div");
     newbutton.id = "pull";

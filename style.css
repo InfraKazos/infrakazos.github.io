@@ -13,9 +13,11 @@
 @keyframes appear{
     from{
         opacity: 0;
+        cursor: pointer;
     }
     to{
         opacity: 1;
+        cursor: pointer;
     }
 }
 
@@ -51,13 +53,15 @@ body{
 
 .animated-image {
     opacity: 0; /* Start invisible */
-    transform: scale(1.5); /* Start scaled down */
     animation: fadeInAndShrink 0.75s forwards cubic-bezier(0.42, 0, 1.0, 1.0); /* Apply animation */
-    transform: rotate(-20deg);
     width: 200px;  /* Set the desired width */
     height: auto;
     aspect-ratio: 1/1;
     padding: 10px;
+}
+
+.animated-image:hover {
+    transform: scale(1.1) rotate(-5deg) !important;
 }
 
 @keyframes fadeInAndShrink {
@@ -100,17 +104,6 @@ body{
     }
 }
 
-.animated-image:nth-child(1) { animation-delay: 0s; }
-.animated-image:nth-child(2) { animation-delay: 0.5s; }
-.animated-image:nth-child(3) { animation-delay: 1s; }
-.animated-image:nth-child(4) { animation-delay: 1.5s; }
-.animated-image:nth-child(5) { animation-delay: 2s; }
-.animated-image:nth-child(6) { animation-delay: 2.5s; }
-.animated-image:nth-child(7) { animation-delay: 3s; }
-.animated-image:nth-child(8) { animation-delay: 3.5s; }
-.animated-image:nth-child(9) { animation-delay: 4s; }
-.animated-image:nth-child(10) { animation-delay: 4.5s; }
-
 #pull {
     position: relative; /* To position the pseudo-element correctly */
     opacity: 0;
@@ -124,7 +117,6 @@ body{
     font-size: 5vw;
     user-select: none;
     color: black; /* Text color */
-    cursor: pointer;
     transition: transform 0.1s ease-in-out;
     font-family: 'Arial';
     color: #603030;
