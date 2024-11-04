@@ -12,7 +12,8 @@ fetch("data.json").then(response => response.json()).then(data => {
 });
 
 function select(){
-    number = Math.random() * 100;
+    let number = Math.random() * 100;
+    console.log(number);
     if(number < 3){
         return students["3star"][Math.floor(Math.random() * students["3star"].length)];
     }else if(number < 21.5){
@@ -23,7 +24,8 @@ function select(){
 }
 
 function selectguarantee2(){
-    number = Math.random() * 100;
+    let number = Math.random() * 100;
+    console.log(number)
     if(number < 3){
         return students["3star"][Math.floor(Math.random() * students["3star"].length)];
     }else{
