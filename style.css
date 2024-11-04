@@ -56,7 +56,7 @@ body{
     animation: fadeInAndShrink 0.75s forwards cubic-bezier(0.42, 0, 1.0, 1.0); /* Apply animation */
     width: 200px;  /* Set the desired width */
     height: auto;
-    aspect-ratio: 1/1;
+    aspect-ratio: 97/101;
     padding: 10px;
 }
 
