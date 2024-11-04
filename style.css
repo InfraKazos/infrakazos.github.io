@@ -1,8 +1,8 @@
 #imgcontainer{
     display: grid;
-    grid-template-columns: repeat(5, 150px); /* Create 5 equal columns */
+    grid-template-columns: repeat(5, 150px); 
     grid-template-rows: repeat(2, 150px);
-    gap: 75px;
+    gap: 90px;
     animation: moveUp 1s forwards;
     animation-delay: 5s;
     user-select: none;
@@ -23,41 +23,46 @@
 
 @keyframes moveUp {
     from {
-        transform: translateY(0); /* Start at original position */
+        transform: translateY(0);
     }
     to {
-        transform: translateY(-50px); /* Move up by 100px */
+        transform: translateY(-50px);
     }
 }
 
 body{
     overflow: hidden;
-    background: linear-gradient(180deg, rgb(0, 165, 221),rgb(0, 37, 150));
+    background: linear-gradient(180deg, rgb(0, 101, 174),rgb(35, 119, 255));
+        background-image: url('https://static.miraheze.org/bluearchivewiki/c/ca/BG_AronaRoom_Night.jpg');
+        background-size: cover;
+        background-position: center -180px;
 }
-/* styles.css */
+
 #container {
-    display: flex; /* Enable flexbox */
-    justify-content: center; /* Center horizontally */
-    align-items: center; /* Center vertically */
-    height: 100vh; /* Full viewport height */
-    margin: 0; /* Remove default margin */
-    overflow: hidden; /* Hide the overflow*/
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    height: 100vh; 
+    margin: 0; 
+    overflow: hidden; 
 }
 #pullcontainer{
     display:flex;
     align-items: center;
     justify-content: center;
-    /*width: ;*/
+    
     transform: translateY(-50px);
 }
 
 .animated-image {
-    opacity: 0; /* Start invisible */
-    animation: fadeInAndShrink 0.75s forwards cubic-bezier(0.42, 0, 1.0, 1.0); /* Apply animation */
-    width: 200px;  /* Set the desired width */
+    opacity: 0; 
+    animation: fadeInAndShrink 0.75s forwards cubic-bezier(0.42, 0, 1.0, 1.0); 
+    width: 200px;  
     height: auto;
     aspect-ratio: 97/101;
-    padding: 10px;
+    padding: 5px;
+    background-color: black;
+    border-radius: 20px;
 }
 
 .animated-image:hover {
@@ -66,12 +71,12 @@ body{
 
 @keyframes fadeInAndShrink {
     0% {
-        opacity: 0; /* Invisible at start */
-        transform: scale(1.5) rotate(-20deg); /* Start small */
+        opacity: 0; 
+        transform: scale(1.5) rotate(-20deg); 
     }
     100% {
-        opacity: 1; /* Fully visible */
-        transform: scale(1) rotate(-5deg); /* End at normal size */
+        opacity: 1; 
+        transform: scale(1) rotate(-5deg); 
     }
 }
 
@@ -105,18 +110,18 @@ body{
 }
 
 #pull {
-    position: relative; /* To position the pseudo-element correctly */
+    position: relative; 
     opacity: 0;
     animation: appear 1s forwards;
     animation-delay: 5s;
     padding: 10px 80px;
     border-radius: 10px;
-    background-color: transparent; /* Make the actual button background transparent */
+    background-color: transparent; 
     border: none;
     transform: translateY(-100px);
     font-size: 5vw;
     user-select: none;
-    color: black; /* Text color */
+    color: black; 
     transition: transform 0.1s ease-in-out;
     font-family: 'Arial';
     color: #603030;
@@ -129,10 +134,10 @@ body{
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(170deg, #f5e849,#f59649); /* The skewed background color */
-    transform: skew(-10deg); /* Adjust skew angle as desired */
-    border-radius: inherit; /* Match button's border-radius */
-    z-index: -1; /* Place behind the button text */
+    background: linear-gradient(170deg, #f5e849,#f59649); 
+    transform: skew(-10deg); 
+    border-radius: inherit; 
+    z-index: -1; 
     transition: transform 0.1s ease-in;
 }
 

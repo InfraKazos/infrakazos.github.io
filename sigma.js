@@ -27,11 +27,11 @@ function select(){
     let number = Math.random() * 100;
     console.log(number);
     if(number < 3){
-        return students["3star"][Math.floor(Math.random() * students["3star"].length)];
+        return [students["3star"][Math.floor(Math.random() * students["3star"].length)], 3];
     }else if(number < 21.5){
-        return students["2star"][Math.floor(Math.random() * students["2star"].length)];
+        return [students["2star"][Math.floor(Math.random() * students["2star"].length)], 2];
     }else{
-        return students["1star"][Math.floor(Math.random() * students["1star"].length)];
+        return [students["1star"][Math.floor(Math.random() * students["1star"].length)], 1];
     }
 }
 
@@ -39,9 +39,9 @@ function selectguarantee2(){
     let number = Math.random() * 100;
     console.log(number)
     if(number < 3){
-        return students["3star"][Math.floor(Math.random() * students["3star"].length)];
+        return [students["3star"][Math.floor(Math.random() * students["3star"].length)], 3];
     }else{
-        return students["2star"][Math.floor(Math.random() * students["2star"].length)];
+        return [students["2star"][Math.floor(Math.random() * students["2star"].length)], 2];
     }
 }
 
@@ -77,15 +77,29 @@ function pull() {
         const img = document.createElement('img');
         let student;
         if(i == 9){
-            student = selectguarantee2();
+            let result = selectguarantee2();
+            student = result[0];
+            stars = result[1];
         }else{
-            student = select();
+            let result = select();
+            student = result[0];
+            stars = result[1];
         }
         console.log(student);
         const studentname = Object.keys(student)[0];
         const anc = document.createElement('a');
         img.src = student[studentname];
         img.classList.add('animated-image');
+        if(stars === 1){
+            img.style.backgroundColor = "rgba(0, 134, 230, 0.7)"
+            img.style.boxShadow = "0px 5px 10px 5px rgba(0, 134, 230, 0.8)";
+        }else if(stars === 2){
+            img.style.backgroundColor = "rgba(255, 234, 0, 0.8)";
+            img.style.boxShadow = "0px 5px 10px 5px rgba(255, 234, 0, 0.8)";
+        }else{
+            img.style.background = "linear-gradient(0deg, rgba(255, 0, 230, 0.8), rgba(255, 0, 119, 0.8))";
+            img.style.boxShadow = "0px 5px 10px 5px rgba(255, 0, 230, 0.8)";
+        }
         img.style.animationDelay = `${(0.5 * i)}s`;
         anc.href = "https://bluearchive.wiki/wiki/" + studentname.replace(" ", "_");
         anc.classList.add('delay');
