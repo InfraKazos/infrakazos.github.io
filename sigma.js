@@ -1,9 +1,21 @@
 setTimeout(()=>{document.getElementById('pull').addEventListener('click', pull);}, 5500);
+
 let container = document.getElementById('container');
 let pullcontainer = document.getElementById('pullcontainer');
 let debounce = false;
 let pyroxdisp = document.getElementById('pyroxdisp');
-let pyroxspent = 0;
+
+let val = parseInt(localStorage.getItem('pyroxspent'));
+if(val === null){
+    localStorage.setItem('pyroxspent', 1200);
+    val = 0
+}
+let pyroxspent = val;
+document.getElementById('pyroxres').addEventListener('click', ()=>{
+    localStorage.setItem('pyroxspent', 0);
+    pyroxspent = 0;
+    pyroxdisp.innerText = '0';
+});
 
 let students;
 fetch("data.json").then(response => response.json()).then(data => {
@@ -39,6 +51,7 @@ function pull() {
         return;
     }
     pyroxspent += 1200;
+    localStorage.setItem('pyroxspent', pyroxspent);
     pyroxdisp.innerText = pyroxspent;
     debounce = true;
     let imgcontainer;
