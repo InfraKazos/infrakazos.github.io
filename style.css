@@ -47,7 +47,7 @@ body{
     overflow: hidden; 
 }
 
-#pyroxres:hover{
+.notz:hover{
     cursor: pointer;
 }
 

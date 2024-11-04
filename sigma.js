@@ -4,6 +4,7 @@ let container = document.getElementById('container');
 let pullcontainer = document.getElementById('pullcontainer');
 let debounce = false;
 let pyroxdisp = document.getElementById('pyroxdisp');
+let pyroxresdiv = document.getElementById('pyroxres');
 
 let val = parseInt(localStorage.getItem('pyroxspent'));
 if(val === null){
@@ -13,6 +14,7 @@ if(val === null){
 let pyroxspent = val;
 document.getElementById('pyroxres').addEventListener('click', ()=>{
     localStorage.setItem('pyroxspent', 0);
+    pyroxresdiv.classList.remove("notz");
     pyroxspent = 0;
     pyroxdisp.innerText = '0';
 });
@@ -53,6 +55,7 @@ function pull() {
     pyroxspent += 1200;
     localStorage.setItem('pyroxspent', pyroxspent);
     pyroxdisp.innerText = pyroxspent;
+    pyroxresdiv.classList.add("notz");
     debounce = true;
     let imgcontainer;
     let button;
