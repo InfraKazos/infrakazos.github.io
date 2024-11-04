@@ -4,18 +4,11 @@ let pullcontainer = document.getElementById('pullcontainer');
 let debounce = false;
 
 let students;
-fetch("data.json").then(response => response.json()).then(data => students = data);
+fetch("data.json").then(response => response.json()).then(data => {
+    students = data;
+    pull();
+});
 
-/*
-def yar(*things):
-    number = random.uniform(0, 100)
-    cumulative = 0
-    sortedlists = sorted(things, key=lambda x: x[1])
-    for i in sortedlists:
-        if number < (i[1] + cumulative):
-            return (random.choice(i[0]), i[2])
-        cumulative += i[1]
-*/
 function select(){
     number = Math.random() * 100;
     if(number < 3){
@@ -93,6 +86,3 @@ function pull() {
         debounce = false;
     }, 6000);
 }
-setTimeout(()=>{
-    pull();
-}, 100)
