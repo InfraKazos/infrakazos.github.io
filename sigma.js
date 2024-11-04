@@ -95,7 +95,8 @@ function pull() {
     }
     const newbutton = document.createElement("div");
     newbutton.id = "pull";
-    newbutton.textContent = "Pull";
+    newbutton.textContent = "Recruit";
+    newbutton.style.fontWeight = "bold"
     setTimeout(()=>{
         try{
             pullcontainer.replaceChildren();
