@@ -7,9 +7,9 @@ let pyroxdisp = document.getElementById('pyroxdisp');
 let pyroxresdiv = document.getElementById('pyroxres');
 
 let val = parseInt(localStorage.getItem('pyroxspent'));
-if(val === null){
+if(val === null || isNaN(val)){
     localStorage.setItem('pyroxspent', 1200);
-    val = 0
+    val = 0;
 }
 let pyroxspent = val;
 document.getElementById('pyroxres').addEventListener('click', ()=>{
@@ -20,7 +20,7 @@ document.getElementById('pyroxres').addEventListener('click', ()=>{
 });
 
 let students;
-fetch("data.json").then(response => response.json()).then(data => {
+fetch("students.json").then(response => response.json()).then(data => {
     students = data;
     pull();
 });
