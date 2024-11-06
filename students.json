@@ -142,8 +142,8 @@
         {"Kirara": "https://static.miraheze.org/bluearchivewiki/3/3f/Kirara.png"}
     ],
     "Special": [
-        {"Amogus": "special/Amog.png", "Redirect": "https://www.youtube.com/watch?v=grd-K33tOSM"},
-        {"Bomber": "special/Bomber.png", "Redirect": "https://www.youtube.com/watch?v=ou5OEn85hF8"},
+        {"Amogus": "special/amog.png", "Redirect": "https://www.youtube.com/watch?v=grd-K33tOSM"},
+        {"Bomber": "special/bomber.png", "Redirect": "https://www.youtube.com/watch?v=ou5OEn85hF8"},
         {"Rick": "special/rick.png", "Redirect": "https://www.youtube.com/watch?v=dQw4w9WgXcQ"}
     ]
 }
