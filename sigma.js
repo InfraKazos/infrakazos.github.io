@@ -1,10 +1,11 @@
 setTimeout(()=>{document.getElementById('pull').addEventListener('click', pull);}, 5500);
-
+let luck = 1;
 let container = document.getElementById('container');
 let pullcontainer = document.getElementById('pullcontainer');
 let debounce = false;
 let pyroxdisp = document.getElementById('pyroxdisp');
 let pyroxresdiv = document.getElementById('pyroxres');
+let specialcheck = document.getElementById("special")
 
 let val = parseInt(localStorage.getItem('pyroxspent'));
 if(val === null || isNaN(val)){
@@ -26,8 +27,14 @@ fetch("students.json").then(response => response.json()).then(data => {
 });
 
 function select(){
-    let number = Math.random() * 100;
+    if(luck <= 0){
+        return [students["1star"][Math.floor(Math.random() * students["1star"].length)], 1];
+    }
+    let number = (Math.random() * 100) / luck;
     console.log(number);
+    if(number < 0.01 && specialcheck.checked){
+        return [students["Special"][Math.floor(Math.random() * students["Special"].length)], 4];
+    }
     if(number < 3){
         return [students["3star"][Math.floor(Math.random() * students["3star"].length)], 3];
     }else if(number < 21.5){
@@ -38,8 +45,17 @@ function select(){
 }
 
 function selectguarantee2(){
-    let number = Math.random() * 100;
+    if(luck === 0){
+        return [students["2star"][Math.floor(Math.random() * students["2star"].length)], 2];
+    }
+    if(luck < 0){
+        return [students["1star"][Math.floor(Math.random() * students["1star"].length)], 1];
+    }
+    number = (Math.random() * 100) / luck;
     console.log(number)
+    if(number < 0.01 && specialcheck.checked){
+        return [students["Special"][Math.floor(Math.random() * students["Special"].length)], 4];
+    }
     if(number < 3){
         return [students["3star"][Math.floor(Math.random() * students["3star"].length)], 3];
     }else{
@@ -99,12 +115,18 @@ function pull() {
         }else if(stars === 2){
             img.style.backgroundColor = "rgba(255, 234, 0, 0.8)";
             img.style.boxShadow = "0px 5px 10px 5px rgba(255, 234, 0, 0.8)";
-        }else{
+        }else if(stars === 3){
             img.style.background = "linear-gradient(0deg, rgba(255, 0, 230, 0.8), rgba(255, 0, 119, 0.8))";
             img.style.boxShadow = "0px 5px 10px 5px rgba(255, 0, 230, 0.8)";
+        }else{
+            img.style.backgroundColor = "rgba(0, 0, 0, 0.8)";
+            img.style.boxShadow = "0px 5px 10px 5px rgba(0, 0, 0, 0.8)";
         }
         img.style.animationDelay = `${(0.5 * i)}s`;
         anc.href = "https://bluearchive.wiki/wiki/" + studentname.replace(" ", "_");
+        if(stars === 4){
+            anc.href = student["Redirect"];
+        }
         anc.classList.add('delay');
         anc.appendChild(img);
         

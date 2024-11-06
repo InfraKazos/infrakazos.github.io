@@ -140,5 +140,10 @@
         {"Akari (New Year)": "https://static.miraheze.org/bluearchivewiki/a/ae/Akari_%28New_Year%29.png"},
         {"Tsubaki (Guide)": "https://static.miraheze.org/bluearchivewiki/e/ef/Tsubaki_%28Guide%29.png"},
         {"Kirara": "https://static.miraheze.org/bluearchivewiki/3/3f/Kirara.png"}
+    ],
+    "Special": [
+        {"Amogus": "special/Amog.png", "Redirect": "https://www.youtube.com/watch?v=grd-K33tOSM"},
+        {"Bomber": "special/Bomber.png", "Redirect": "https://www.youtube.com/watch?v=ou5OEn85hF8"},
+        {"Rick": "special/rick.png", "Redirect": "https://www.youtube.com/watch?v=dQw4w9WgXcQ"}
     ]
 }
