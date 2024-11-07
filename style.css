@@ -62,8 +62,8 @@ body{
 .animated-image {
     opacity: 0; 
     animation: fadeInAndShrink 0.75s forwards cubic-bezier(0.42, 0, 1.0, 1.0); 
-    width: 13.3779264214vw;  
-    height: auto;
+    width: auto;  
+    height: 26.5251989390vh;
     aspect-ratio: 97/101;
     padding: 0.6631299735vh 0.3344481605vw;
     background-color: black;
