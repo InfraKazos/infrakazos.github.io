@@ -111,16 +111,16 @@ function pull() {
         img.classList.add('animated-image');
         if(stars === 1){
             img.style.backgroundColor = "rgba(0, 134, 230, 0.7)"
-            img.style.boxShadow = "0px 5px 10px 5px rgba(0, 134, 230, 0.8)";
+            img.style.boxShadow = "0px 0px 1.0033444816vw 0.3344481605vw rgba(0, 134, 230, 0.8)";
         }else if(stars === 2){
             img.style.backgroundColor = "rgba(255, 234, 0, 0.8)";
-            img.style.boxShadow = "0px 5px 10px 5px rgba(255, 234, 0, 0.8)";
+            img.style.boxShadow = "0px 0px 1.0033444816vw 0.3344481605vw rgba(255, 234, 0, 0.8)";
         }else if(stars === 3){
             img.style.background = "linear-gradient(0deg, rgba(255, 0, 230, 0.8), rgba(255, 0, 119, 0.8))";
-            img.style.boxShadow = "0px 5px 10px 5px rgba(255, 0, 230, 0.8)";
+            img.style.boxShadow = "0px 0px 1.0033444816vw 0.3344481605vw rgba(255, 0, 230, 0.8)";
         }else{
             img.style.backgroundColor = "rgba(0, 0, 0, 0.8)";
-            img.style.boxShadow = "0px 5px 10px 5px rgba(0, 0, 0, 0.8)";
+            img.style.boxShadow = "0px 0px 1.0033444816vw 0.3344481605vw rgba(0, 0, 0, 0.8)";
         }
         img.style.animationDelay = `${(0.5 * i)}s`;
         anc.href = "https://bluearchive.wiki/wiki/" + studentname.replace(" ", "_");

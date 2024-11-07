@@ -1,13 +1,13 @@
 #imgcontainer{
     display: grid;
-    grid-template-columns: repeat(5, 150px); 
-    grid-template-rows: repeat(2, 150px);
-    gap: 90px;
+    grid-template-columns: repeat(5, 10.0334448161vw); 
+    grid-template-rows: repeat(2, 19.8938992042vh);
+    gap: 11.9363395225vh 6.0200668896vw;
     animation: moveUp 1s forwards;
     animation-delay: 5s;
     user-select: none;
-    padding-bottom: 100px;
-    padding-right: 50px;
+    padding-bottom: 13.2625994695vh;
+    padding-right: 3.3444816054vw;
 }
 
 @keyframes appear{
@@ -23,10 +23,10 @@
 
 @keyframes moveUp {
     from {
-        transform: translateY(0);
+        transform: translateY(0vh);
     }
     to {
-        transform: translateY(-50px);
+        transform: translateY(-6.6312997347vh);
     }
 }
 
@@ -35,7 +35,7 @@ body{
     background: linear-gradient(180deg, rgb(0, 101, 174),rgb(35, 119, 255));
         background-image: url('https://static.miraheze.org/bluearchivewiki/c/ca/BG_AronaRoom_Night.jpg');
         background-size: cover;
-        background-position: center -180px;
+        background-position: center -23.8726790451vh;
 }
 
 #container {
@@ -56,18 +56,18 @@ body{
     align-items: center;
     justify-content: center;
     
-    transform: translateY(-50px);
+    transform: translateY(-6.6312997347vh);
 }
 
 .animated-image {
     opacity: 0; 
     animation: fadeInAndShrink 0.75s forwards cubic-bezier(0.42, 0, 1.0, 1.0); 
-    width: 200px;  
+    width: 13.3779264214vw;  
     height: auto;
     aspect-ratio: 97/101;
-    padding: 5px;
+    padding: 0.6631299735vh 0.3344481605vw;
     background-color: black;
-    border-radius: 20px;
+    border-radius: 1.3377926421vw;
 }
 
 .animated-image:hover {
@@ -119,11 +119,11 @@ body{
     opacity: 0;
     animation: appear 1s forwards;
     animation-delay: 5s;
-    padding: 10px 80px;
-    border-radius: 10px;
+    padding: 1.32625994695vh 5.3511705686vw;
+    border-radius: 1.3262599469vh;
     background-color: transparent; 
     border: none;
-    transform: translateY(-100px);
+    transform: translateY(-13.2625994695vh);
     font-size: 5vw;
     user-select: none;
     color: black; 
@@ -147,7 +147,7 @@ body{
 }
 
 #pull:active{
-    transform: translateY(-100px) scale(0.9);
+    transform: translateY(-13.2625994695) scale(0.9);
 }
 
 #pull:active::before{
